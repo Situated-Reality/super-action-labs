@@ -55,3 +55,8 @@
   .hero-links{margin-top:30px}
   .live-context{width:330px;bottom:18px}
 }
+
+/* Semantic status colours */
+.context-row{transition:background .45s ease}.context-row.is-warning{background:rgba(255,159,67,.055)}.context-row.is-critical{background:rgba(255,91,69,.07)}.live-value{transition:color .45s ease}.context-progress i{box-shadow:0 0 10px color-mix(in srgb,currentColor 28%,transparent)}
+.decision-card{--policy-color:#d9ff43;transition:border-color .45s ease,background .45s ease}.decision-card strong{color:var(--policy-color);transition:color .45s ease,text-shadow .45s ease}.decision-card .decision-meter i{background:var(--policy-color);box-shadow:0 0 12px color-mix(in srgb,var(--policy-color) 34%,transparent)}.decision-card[data-policy="ask"],.decision-card[data-policy="assist"]{border-color:color-mix(in srgb,var(--policy-color) 38%,#343535)}
+.manifesto-copy .kicker strong{font-weight:600;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:7px}.manifesto-copy>p:last-child strong{color:var(--ink);font-weight:650;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;text-decoration-color:#777}

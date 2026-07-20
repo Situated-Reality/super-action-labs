@@ -25,7 +25,6 @@
         <a href="#principles" data-i18n="navPrinciples">Principles</a>
       </nav>
       <div class="header-actions">
-        <button class="lang-toggle" type="button" aria-label="Switch language">中</button>
         <a class="mini-cta" href="mailto:hello@super-action.org" data-i18n="navTalk">Talk to us ↗</a>
       </div>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
@@ -41,14 +40,14 @@
           <p class="hero-body" data-i18n="heroBody">We build the Context Operating System for Human–AI Collaboration—so technology knows when to act, where to appear, and when to step back.</p>
           <div class="hero-links">
             <a class="primary-btn" href="#engine"><span data-i18n="heroCta">Explore the engine</span><b>↓</b></a>
-            <span class="location">LONDON / GLOBAL<br />2026 — FORWARD</span>
+            <span class="location">FROM CAMBRIDGE<br />TO HONG KONG</span>
           </div>
         </div>
         <div class="live-context" aria-label="Live context simulation">
           <div class="context-head"><span data-i18n="liveContext">LIVE CONTEXT</span><i></i></div>
-          <div class="context-row"><span data-i18n="signalActivity">Activity</span><strong data-i18n="signalWriting">Deep work</strong><b>96%</b></div>
-          <div class="context-row"><span data-i18n="signalIntent">Intent</span><strong data-i18n="signalFinish">Finish a thought</strong><b>84%</b></div>
-          <div class="context-row"><span data-i18n="signalPolicy">Policy</span><strong data-i18n="signalWait">Wait. Don't interrupt.</strong><b class="status-dot"></b></div>
+          <div class="context-row"><span>Activity</span><strong>Deep work</strong><b class="live-value" data-min="88" data-max="98">96%</b><div class="context-progress"><i style="width:96%"></i></div></div>
+          <div class="context-row"><span>Intent</span><strong>Finish a thought</strong><b class="live-value" data-min="76" data-max="91">84%</b><div class="context-progress"><i style="width:84%"></i></div></div>
+          <div class="context-row"><span>Intervene</span><strong class="policy-text">Wait. Don't interrupt.</strong><b class="live-value" data-min="8" data-max="22">12%</b><div class="context-progress policy-progress"><i style="width:12%"></i></div></div>
         </div>
         <a class="scroll-cue" href="#manifesto" aria-label="Scroll to manifesto">SCROLL <span>↓</span></a>
       </section>
@@ -84,14 +83,14 @@
             </div>
             <div class="engine-orbit">
               <div class="orbit o1"></div><div class="orbit o2"></div>
-              <div class="engine-core"><i></i><span>CONTEXT<br />STATE</span><strong>0.94</strong></div>
+              <div class="engine-core"><i></i><span>CONTEXT<br />STATE</span><strong id="contextConfidence">0.94</strong><div class="core-wave"><b></b><b></b><b></b><b></b><b></b></div></div>
               <span class="satellite s1">MEMORY</span><span class="satellite s2">PLANNING</span><span class="satellite s3">UI POLICY</span><span class="satellite s4">DEVICE<br />MANAGER</span>
             </div>
             <div class="engine-output">
               <p>02 / DECIDE</p>
-              <div class="decision-card"><span>INTERVENTION POLICY</span><strong>WAIT</strong><small>Confidence 91%</small></div>
+              <div class="decision-card"><span>INTERVENTION POLICY</span><strong id="decisionState">WAIT</strong><small>Confidence <b id="decisionConfidence">91</b>%</small><div class="decision-meter"><i style="width:91%"></i></div></div>
               <div class="detail-panel"><span>SELECT A CAPABILITY</span><p>Transforms vision, audio, motion and device telemetry into grounded signals.</p></div>
-              <div class="policy-line"><span>Control balance</span><div><i style="width:72%"></i></div><b>Human</b></div>
+              <div class="policy-line"><span>Control balance</span><div><i id="controlBalance" style="width:72%"></i></div><b>Human</b></div>
             </div>
           </div>
         </div>
@@ -110,10 +109,12 @@
             <button class="surface-tab" data-surface="xr" role="tab">04 <span>XR / Spatial UI</span></button>
             <button class="surface-tab" data-surface="agents" role="tab">05 <span>Agents</span></button>
           </div>
-          <div class="surface-visual">
+          <div class="surface-visual" data-mode="glasses">
             <div class="spatial-frame"><i></i><i></i><i></i><i></i></div>
+            <div class="surface-motion" aria-hidden="true"><i></i><i></i><i></i><b></b><b></b><b></b></div>
             <div class="surface-symbol" id="surfaceSymbol">◎</div>
             <div class="surface-signal"><span>CONTEXT / <b id="surfaceStatus">FOCUS DETECTED</b></span><i></i></div>
+            <div class="interaction-hint">MOVE / CLICK TO EXPLORE ↗</div>
             <div class="surface-copy">
               <p id="surfaceLabel">PERSONAL COMPUTING</p>
               <h3 id="surfaceTitle">Help that respects<br />your attention.</h3>
@@ -129,10 +130,10 @@
           <h2 data-i18n="principlesTitle">Amplify action.<br /><em>Preserve agency.</em></h2>
         </div>
         <div class="principle-grid">
-          <article class="reveal"><span>01</span><div class="principle-icon path-icon"></div><h3 data-i18n="p1Title">Action</h3><p data-i18n="p1Body">The system exists to reduce friction between intent and meaningful progress.</p></article>
-          <article class="reveal"><span>02</span><div class="principle-icon core-icon"></div><h3 data-i18n="p2Title">Intelligence</h3><p data-i18n="p2Body">Understanding comes before action. Uncertainty is visible, never hidden.</p></article>
-          <article class="reveal"><span>03</span><div class="principle-icon connect-icon"></div><h3 data-i18n="p3Title">Connection</h3><p data-i18n="p3Body">People, AI and environments coordinate as one legible system.</p></article>
-          <article class="reveal"><span>04</span><div class="principle-icon forward-icon"></div><h3 data-i18n="p4Title">Forward</h3><p data-i18n="p4Body">Built for a future where computing is present, spatial and humane.</p></article>
+          <article class="reveal principle-card" tabindex="0"><span>01 / AMPLIFY</span><div class="principle-icon action-diagram"><i class="start-dot"></i><b class="action-path"></b><i class="end-dot"></i><small>INTENT</small><small>OUTCOME</small></div><h3>Action</h3><p>The system exists to reduce friction between intent and meaningful progress.</p><em>HOVER / CLICK ↗</em></article>
+          <article class="reveal principle-card" tabindex="0"><span>02 / UNDERSTAND</span><div class="principle-icon intelligence-diagram"><i></i><i></i><i></i><b></b><small>SIGNALS</small><small>DECISION</small></div><h3>Intelligence</h3><p>Understanding comes before action. Uncertainty is visible, never hidden.</p><em>HOVER / CLICK ↗</em></article>
+          <article class="reveal principle-card" tabindex="0"><span>03 / COORDINATE</span><div class="principle-icon connection-diagram"><i><small>HUMAN</small></i><i><small>AI</small></i><i><small>SPACE</small></i><b></b><b></b></div><h3>Connection</h3><p>People, AI and environments coordinate as one legible system.</p><em>HOVER / CLICK ↗</em></article>
+          <article class="reveal principle-card" tabindex="0"><span>04 / EVOLVE</span><div class="principle-icon forward-diagram"><b></b><i></i><small>NOW</small><small>NEXT</small></div><h3>Forward</h3><p>Built for a future where computing is present, spatial and humane.</p><em>HOVER / CLICK ↗</em></article>
         </div>
       </section>
 

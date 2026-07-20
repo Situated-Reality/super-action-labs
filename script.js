@@ -1,9 +1,9 @@
 const surfaces = {
-  glasses: { symbol: '◎', status: 'FOCUS DETECTED', label: 'PERSONAL COMPUTING', title: 'Help that respects<br>your attention.', body: "Glasses that understand what you're doing and surface only what matters—in the right place, at the right time." },
-  enterprise: { symbol: 'Ⅱ', status: 'STEP 04 / VERIFIED', label: 'FRONTLINE INTELLIGENCE', title: 'Guidance grounded<br>in the real world.', body: 'Identify the person, equipment and current procedure. Deliver the next safe step without breaking flow.' },
-  robotics: { symbol: '↔', status: 'HUMAN INTENT / WAIT', label: 'HUMAN–ROBOT COLLABORATION', title: 'Robots that know<br>when to help.', body: 'Understand human activity, predict assistance needs, and negotiate control before taking action.' },
-  xr: { symbol: '⌗', status: 'ANCHOR / CONFIRMED', label: 'SPATIAL COMPUTING', title: 'Information where<br>it belongs.', body: 'Generate guidance, highlights and spatial interfaces from the meaning of a place—not fixed coordinates.' },
-  agents: { symbol: '→', status: 'ACTION / APPROVED', label: 'SITUATED AGENTS', title: 'Beyond prompt,<br>plan, answer.', body: 'Agents that carry context into planning and action while keeping intent, uncertainty and agency visible.' }
+  glasses: { symbol: '◎', status: 'FOCUS DETECTED', label: 'PERSONAL COMPUTING', title: 'Help that respects your attention.', body: "Glasses that understand what you're doing and surface only what matters—in the right place, at the right time." },
+  enterprise: { symbol: 'Ⅱ', status: 'STEP 04 / VERIFIED', label: 'FRONTLINE INTELLIGENCE', title: 'Guidance grounded in the real world.', body: 'Identify the person, equipment and current procedure. Deliver the next safe step without breaking flow.' },
+  robotics: { symbol: '↔', status: 'HUMAN INTENT / WAIT', label: 'HUMAN–ROBOT COLLABORATION', title: 'Robots that know when to help.', body: 'Understand human activity, predict assistance needs, and negotiate control before taking action.' },
+  xr: { symbol: '⌗', status: 'ANCHOR / CONFIRMED', label: 'SPATIAL COMPUTING', title: 'Information where it belongs.', body: 'Generate guidance, highlights and spatial interfaces from the meaning of a place—not fixed coordinates.' },
+  agents: { symbol: '→', status: 'ACTION / APPROVED', label: 'SITUATED AGENTS', title: 'Beyond prompt, plan, answer.', body: 'Agents that carry context into planning and action while keeping intent, uncertainty and agency visible.' }
 };
 
 const surfaceVisual = document.querySelector('.surface-visual');

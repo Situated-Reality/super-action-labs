@@ -75,3 +75,150 @@
 .hero-copy h1{font-size:clamp(52px,6.35vw,102px)}
 .hero-accent{color:var(--accent)}
 @media(max-width:560px){.hero-copy h1{font-size:48px}}
+
+/* Legibility pass: supporting copy should hold its own beside the display type. */
+.manifesto-copy>p:last-child{
+  max-width:640px;
+  font-size:clamp(18px,1.35vw,20px);
+  line-height:1.7;
+}
+.section-heading>p{
+  max-width:520px;
+  font-size:clamp(17px,1.25vw,19px);
+  line-height:1.65;
+}
+
+/* Platform UI typography and spacing. */
+.engine-grid{min-height:620px;grid-template-columns:1.05fr 1.15fr 1fr}
+.engine-inputs,.engine-output{padding:30px}
+.console-top,.engine-inputs>p,.engine-output>p{font-size:15px}
+.engine-node{padding:21px 10px}
+.engine-node b{font-size:17px;margin-bottom:9px}
+.engine-node span{font-size:14px;line-height:1.45}
+.engine-core span{font-size:14px}
+.engine-core strong{font-size:30px}
+.satellite{font-size:14px;padding:9px 10px}
+.decision-card span,.detail-panel span,.decision-card small,.policy-line{font-size:15px}
+.decision-card strong{font-size:58px}
+.detail-panel{min-height:158px;padding:22px}
+.detail-panel p{font-size:17px;line-height:1.65}
+.policy-line{margin-top:36px}
+
+/* Product-surface UI typography and breathing room. */
+.surface-stage{grid-template-columns:320px 1fr;min-height:650px}
+.surface-tab{font-size:15px;padding:0 26px}
+.surface-tab span{font-size:19px}
+.surface-signal,.surface-copy>p:first-child{font-size:15px}
+.interaction-hint{font-size:14px}
+.surface-copy{width:53%;bottom:9%}
+.surface-copy>p:last-child{max-width:520px;font-size:18px;line-height:1.65}
+
+/* A mode-specific yellow-green focus object makes every surface visibly interactive. */
+.surface-focus{
+  --focus-x:-64px;
+  --focus-y:54px;
+  --focus-r:0deg;
+  position:absolute;
+  z-index:4;
+  left:76%;
+  top:28%;
+  width:15px;
+  height:15px;
+  background:var(--accent);
+  border:1px solid rgba(16,17,17,.72);
+  border-radius:50%;
+  box-shadow:0 0 0 8px rgba(217,255,67,.12),0 0 20px rgba(217,255,67,.4);
+  transform:rotate(var(--focus-r));
+  transition:left .35s ease,top .35s ease,width .35s ease,height .35s ease,border-radius .35s ease,transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;
+  pointer-events:none;
+  animation:surfaceFocusPulse 2s ease-in-out infinite;
+}
+.surface-visual:hover .surface-focus,.surface-visual.interacting .surface-focus{
+  transform:translate(var(--focus-x),var(--focus-y)) rotate(calc(var(--focus-r) + 90deg)) scale(1.22);
+  box-shadow:0 0 0 12px rgba(217,255,67,.1),0 0 28px rgba(217,255,67,.55);
+}
+.surface-visual[data-mode="glasses"] .surface-focus{
+  --focus-x:-92px;
+  --focus-y:72px;
+  left:82%;
+  top:25%;
+  border-radius:50%;
+}
+.surface-visual[data-mode="enterprise"] .surface-focus{
+  --focus-x:-116px;
+  --focus-y:104px;
+  left:84%;
+  top:22%;
+  border-radius:2px;
+}
+.surface-visual[data-mode="robotics"] .surface-focus{
+  --focus-x:78px;
+  --focus-y:82px;
+  left:66%;
+  top:27%;
+  width:21px;
+  height:12px;
+  border-radius:6px;
+}
+.surface-visual[data-mode="xr"] .surface-focus{
+  --focus-x:-128px;
+  --focus-y:116px;
+  --focus-r:45deg;
+  left:86%;
+  top:20%;
+  border-radius:2px;
+}
+.surface-visual[data-mode="agents"] .surface-focus{
+  --focus-x:-106px;
+  --focus-y:72px;
+  left:80%;
+  top:24%;
+  border-radius:50%;
+}
+@keyframes surfaceFocusPulse{50%{filter:brightness(1.08);opacity:.72}}
+
+/* Wide screens have enough horizontal room: use it instead of forcing display
+   headings into decorative two-line stacks. Supporting copy sits below. */
+@media(min-width:901px){
+  .engine .section-heading,.surfaces .section-heading{
+    grid-template-columns:120px minmax(0,1fr);
+    align-items:start;
+    row-gap:24px;
+  }
+  .engine .section-heading h2,.surfaces .section-heading h2{
+    grid-column:2;
+  }
+  .engine .section-heading>p,.surfaces .section-heading>p{
+    grid-column:2;
+    max-width:720px;
+  }
+}
+@media(min-width:901px) and (max-width:1799px){
+  .engine .section-heading h2,.surfaces .section-heading h2{
+    font-size:clamp(60px,5.4vw,88px);
+  }
+}
+
+@media(max-width:900px){
+  .engine-grid{min-height:auto;grid-template-columns:1fr}
+  .engine-inputs,.engine-output{padding:28px 24px}
+  .surface-stage{grid-template-columns:1fr}
+  .surface-tab{min-width:185px;height:76px}
+  .surface-visual{min-height:680px}
+  .surface-copy{width:68%}
+  .surface-signal{top:22px;right:24px;bottom:auto}
+}
+@media(max-width:560px){
+  .manifesto-copy>p:last-child{font-size:18px}
+  .console-top,.engine-inputs>p,.engine-output>p{font-size:13px}
+  .engine-node b{font-size:16px}
+  .engine-node span,.satellite{font-size:13px}
+  .decision-card span,.detail-panel span,.decision-card small,.policy-line{font-size:13px}
+  .detail-panel p{font-size:16px}
+  .surface-tab{min-width:174px}
+  .surface-tab span{font-size:17px}
+  .surface-visual{min-height:720px}
+  .surface-copy{width:84%;bottom:8%}
+  .surface-copy>p:last-child{font-size:17px}
+  .surface-signal{top:58px;right:24px;bottom:auto;font-size:13px}
+}

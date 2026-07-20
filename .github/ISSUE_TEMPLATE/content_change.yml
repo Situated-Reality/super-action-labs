@@ -1,0 +1,41 @@
+name: Content or brand update
+description: Propose a change to public copy, imagery, positioning, or brand presentation.
+title: "[Content]: "
+labels: [content]
+body:
+  - type: input
+    id: section
+    attributes:
+      label: Page section or asset
+      placeholder: "Hero value proposition"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current content
+      description: Quote or describe the current state.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed change
+      description: Provide exact replacement copy or a clear visual direction.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale and audience impact
+    validations:
+      required: true
+  - type: checkboxes
+    id: alignment
+    attributes:
+      label: Alignment
+      options:
+        - label: I reviewed docs/BRAND.md.
+          required: true
+        - label: The proposal does not present simulated telemetry as production evidence.
+          required: true

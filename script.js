@@ -100,6 +100,15 @@ const observer = new IntersectionObserver((entries) => entries.forEach(entry => 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 const header = document.querySelector('.site-header');
+const menuToggle = document.querySelector('.menu-toggle');
+menuToggle.addEventListener('click', () => {
+  const isOpen = header.classList.toggle('menu-open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+});
+header.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => {
+  header.classList.remove('menu-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+}));
 window.addEventListener('scroll', () => {
   const progress = Math.min(window.scrollY / 500, 1);
   header.style.background = `rgba(15,16,16,${progress * .94})`;

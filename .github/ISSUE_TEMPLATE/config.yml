@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: mailto:hello@super-action.org?subject=Security%20report
+    about: Report suspected vulnerabilities privately; do not open a public issue.
+  - name: Company contact
+    url: mailto:hello@super-action.org
+    about: Contact Super-Action Labs about partnerships or general enquiries.

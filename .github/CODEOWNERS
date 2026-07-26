@@ -1,0 +1,7 @@
+# Default ownership for the public site.
+* @Situated-Reality
+
+# Brand and production configuration require explicit review.
+/assets/ @Situated-Reality
+/CNAME @Situated-Reality
+/.github/workflows/ @Situated-Reality

@@ -1,0 +1,50 @@
+name: Website bug
+description: Report a reproducible problem with the public website.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not report security vulnerabilities here. Follow SECURITY.md instead."
+  - type: input
+    id: url
+    attributes:
+      label: Affected URL or section
+      placeholder: "https://www.super-action.org/#surfaces"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: "1. Open…\n2. Select…\n3. Observe…"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: "Safari 19, macOS; or Chrome 140, Pixel 9"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or additional context
+      description: Remove personal or sensitive information before attaching files.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I confirmed this is not a private security report.
+          required: true
+        - label: I reproduced the issue on the current production site.
+          required: true
